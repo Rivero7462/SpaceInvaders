@@ -25,7 +25,7 @@ public:
 	virtual ~Player();
 
 	//Accessor
-	const sf::Vector2f& getPos() const;
+	const sf::Vector2f& getPlayerCenter() const;
 	const bool& canShoot();
 
 	//Functions

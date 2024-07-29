@@ -34,7 +34,7 @@ Player::Player()
 Player::~Player()
 {
 }
-const sf::Vector2f& Player::getPos() const
+const sf::Vector2f& Player::getPlayerCenter() const
 {
 	float centerX = this->sprite.getPosition().x + (this->sprite.getGlobalBounds().width / 2);
 	float centerY = this->sprite.getPosition().y + (this->sprite.getGlobalBounds().height / 2);

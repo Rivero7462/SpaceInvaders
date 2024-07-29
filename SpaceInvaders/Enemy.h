@@ -17,12 +17,12 @@ private:
 	void initVariables();
 
 public:
-	Enemy();
+	Enemy(float posX, float posY);
 	virtual ~Enemy();
 
 	//Functions
 
 	void update();
-	void render();
+	void render(sf::RenderTarget* target);
 };
 

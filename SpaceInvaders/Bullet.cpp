@@ -3,10 +3,8 @@
 //Constructors / Destructors
 Bullet::Bullet()
 {
-	this->initVariables();
-	this->initSprite();
+	this->movementSpeed = 0;
 }
-
 
 Bullet::Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float dirY, float movementSpeed)
 {
