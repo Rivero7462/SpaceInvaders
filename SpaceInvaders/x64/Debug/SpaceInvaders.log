@@ -1,11 +1,4 @@
-﻿  Enemy.cpp
-  Game.cpp
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Game.cpp(128,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Game.cpp(128,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Player.cpp
+﻿  Game.cpp
   main.cpp
   Generating Code...
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(49,1): warning C4172: returning address of local variable or temporary
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(42,1): warning C4172: returning address of local variable or temporary
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(52,1): warning C4172: returning address of local variable or temporary
   SpaceInvaders.vcxproj -> R:\1 Game Design\C++\SpaceInvaders\x64\Debug\SpaceInvaders.exe
