@@ -1,8 +1,2 @@
 ﻿  Game.cpp
-  Player.cpp
-  Generating Code...
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(58,1): warning C4172: returning address of local variable or temporary
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(50,1): warning C4172: returning address of local variable or temporary
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(46,1): warning C4172: returning address of local variable or temporary
-R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Player.cpp(61,1): warning C4172: returning address of local variable or temporary
   SpaceInvaders.vcxproj -> R:\1 Game Design\C++\SpaceInvaders\x64\Debug\SpaceInvaders.exe

@@ -58,8 +58,7 @@
               "RelativeToolTip": "SpaceInvaders\\Game.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T17:17:25.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:17:25.213Z"
             },
             {
               "$type": "Document",
@@ -69,7 +68,7 @@
               "RelativeDocumentMoniker": "SpaceInvaders\\Game.cpp",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
               "RelativeToolTip": "SpaceInvaders\\Game.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACUAAAA4AAAA",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAK0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-29T17:17:41.401Z",
               "EditorCaption": ""
@@ -84,8 +83,7 @@
               "RelativeToolTip": "SpaceInvaders\\Player.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T17:28:11.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:28:11.015Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "SpaceInvaders\\Player.cpp",
               "ViewState": "AQIAABAAAAAAAAAAAAAowEYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T17:28:26.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:28:26.547Z"
             },
             {
               "$type": "Document",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "SpaceInvaders\\Bullet.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAowBkAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T19:20:08.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T19:20:08.45Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "SpaceInvaders\\Enemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T21:41:43.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:41:43.516Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "SpaceInvaders\\Enemy.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T21:42:04.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T21:42:04.798Z"
             }
           ]
         }
