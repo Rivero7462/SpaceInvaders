@@ -2,6 +2,8 @@
 
 void Player::initVariables()
 {
+	this->maxHp = 10;
+	this->hp = maxHp;
 	this->maxShootCooldown = 10;
 	this->shootCooldown = 0;
 	this->movementSpeed = 10.0f;
@@ -34,6 +36,8 @@ Player::Player()
 Player::~Player()
 {
 }
+//Accessors
+
 const sf::Vector2f& Player::getPlayerCenter() const
 {
 	float centerX = this->sprite.getPosition().x + (this->sprite.getGlobalBounds().width / 2);
@@ -41,6 +45,11 @@ const sf::Vector2f& Player::getPlayerCenter() const
 
 	return sf::Vector2f(centerX, centerY);
 }
+const sf::FloatRect& Player::getBounds() const
+{
+	return this->sprite.getGlobalBounds();
+}
+
 const bool& Player::canShoot()
 {
 	if (this->shootCooldown == 0)
@@ -50,6 +59,29 @@ const bool& Player::canShoot()
 	}
 	else
 		return false;
+}
+const int& Player::getHealth() const
+{
+	return this->hp;
+}
+const int& Player::getMaxHealth() const
+{
+	return this->maxHp;
+}
+//Modifiers
+
+void Player::setPosition(const sf::Vector2f pos)
+{
+	this->sprite.setPosition(pos);
+}
+
+void Player::takeDamage(int damage)
+{
+	if(this->hp > 0)
+		this->hp -= damage;
+
+	if(this->hp < 0)
+		this->hp = 0;
 }
 //Functions
 

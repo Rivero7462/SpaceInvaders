@@ -1,6 +1,9 @@
 #pragma once
 
 #include <map>
+//#include <string>
+#include <sstream>
+
 #include "Player.h"
 #include "Bullet.h"
 #include "Enemy.h"
@@ -20,8 +23,21 @@ private:
 	sf::Font font;
 	sf::Text pointText;
 
+	sf::Text gameOverText;
+
+	//World
+	sf::Texture backgroundTex;
+	sf::Sprite backgroundSprite;
+
+	//Systems
+	unsigned int points;
+
 	//Player
 	Player* player;
+
+	//PlayerGUI
+	sf::RectangleShape playerHpBar;
+	sf::RectangleShape playerHpBarBack;
 
 	//Enemies
 	float spawnTimer;
@@ -32,6 +48,8 @@ private:
 	void initWindow();
 	void initTextures();
 	void initGUI();
+	void initBackground();
+	void initSystems();
 
 	void initPlayer();
 	void initEnemies();
@@ -47,11 +65,13 @@ public:
 
 	void updateInput();
 	void updateGUI();
+	void updateWorld();
+	void updateCollision();
 	void updateBullets();
 	void updateEnemies();
 	void update();
 
 	void renderGUI();
+	void renderWorld();
 	void render();
 };
-

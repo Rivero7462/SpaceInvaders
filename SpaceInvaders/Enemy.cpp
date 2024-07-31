@@ -1,31 +1,31 @@
 #include "Enemy.h"
 
 //Private functions
-void Enemy::initVariables()
+void Enemy::initVariables(int points)
 {
+	this->points = points;
+
 	this->type = 0;
 	this->hpMax = 10;
 	this->hp = hpMax;
-	this->damage = 1;
-	this->points = 5;
 	this->moveSpeed = 3.0f;
 }
 
 void Enemy::initSprite()
 {
 	this->sprite.setRadius(static_cast<float>(rand() % 20 + 20));
-	this->sprite.setPointCount(static_cast<size_t>(rand() % 8) + 3);
+	this->sprite.setPointCount(this->points);
 
 	this->sprite.setFillColor(sf::Color(rand()%255+1, rand() % 255 + 1, rand() % 255 + 1, 255));
 }
 //Constructors / Destructors
 
-Enemy::Enemy(float posX, float posY)
+Enemy::Enemy(sf::Vector2f pos, int points)
 {
-	this->initVariables();
+	this->initVariables(points);
 	this->initSprite();
 
-	this->sprite.setPosition(posX, posY);
+	this->sprite.setPosition(pos);
 }
 
 Enemy::~Enemy()
@@ -36,6 +36,10 @@ Enemy::~Enemy()
 const sf::FloatRect Enemy::getBounds() const
 {
 	return this->sprite.getGlobalBounds();
+}
+const int& Enemy::getPoints() const
+{
+	return this->points;
 }
 //Functions
 

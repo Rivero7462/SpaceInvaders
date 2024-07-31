@@ -10,19 +10,19 @@ private:
 	int type;
 	int hp;
 	int hpMax;
-	int damage;
 	int points;
 	float moveSpeed;
 
 	void initSprite();
-	void initVariables();
+	void initVariables(int points);
 
 public:
-	Enemy(float posX, float posY);
+	Enemy(sf::Vector2f pos, int points);
 	virtual ~Enemy();
 
 	//Accessors
 	const sf::FloatRect getBounds() const;	//Make sure copy not reference or it'll "bug out"
+	const int& getPoints() const;
 
 	//Functions
 

@@ -23,7 +23,37 @@ void Game::initGUI()
 	this->pointText.setFont(this->font);
 	this->pointText.setCharacterSize(24);
 	this->pointText.setFillColor(sf::Color::White);
-	this->pointText.setString("Test");
+	this->pointText.setPosition(20.0f, 0.0f);
+
+	//Game over text
+	this->gameOverText.setFont(this->font);
+	this->gameOverText.setCharacterSize(60);
+	this->gameOverText.setFillColor(sf::Color::White);
+	this->gameOverText.setString("GAME OVER");
+	this->gameOverText.setPosition(
+		this->window->getSize().x / 2.0f - this->gameOverText.getGlobalBounds().width / 2.0f,
+		this->window->getSize().y / 2.0f - this->gameOverText.getGlobalBounds().height / 2.0f);
+
+	//Init Player GUI
+	this->playerHpBar.setSize(sf::Vector2f(300.0f, 25.0f));
+	this->playerHpBar.setFillColor(sf::Color::Red);
+	this->playerHpBar.setPosition(sf::Vector2f(20.0f, 40.0f));
+
+	this->playerHpBarBack = this->playerHpBar;
+	this->playerHpBarBack.setFillColor(sf::Color(25, 25, 25, 200));
+}
+
+void Game::initBackground()
+{
+	if (this->backgroundTex.loadFromFile("Textures/background.png"))
+		this->backgroundSprite.setTexture(this->backgroundTex);
+	else
+		std::cout << "ERROR LOADING BACKGROUND\n";
+}
+
+void Game::initSystems()
+{
+	this->points = 0;
 }
 
 void Game::initPlayer()
@@ -43,6 +73,9 @@ Game::Game()
 	this->initWindow();
 	this->initTextures();
 	this->initGUI();
+	this->initBackground();
+	this->initSystems();
+
 	this->initPlayer();
 	this->initEnemies();
 }
@@ -71,8 +104,13 @@ void Game::run()
 {
 	while (this->window->isOpen())
 	{
-		this->update();
-		this->render();
+		this->pollEvents();
+
+		if (this->player->getHealth() > 0)
+		{
+			this->update();
+			this->render();
+		}
 	}
 }
 
@@ -120,7 +158,33 @@ void Game::updateInput()
 
 void Game::updateGUI()
 {
+	std::stringstream ss;
 
+	ss << "Points: " << this->points << "\n";
+	this->pointText.setString(ss.str());
+
+	//Update Player GUI
+	float hpPercent = static_cast<float>(this->player->getHealth()) / this->player->getMaxHealth();
+	this->playerHpBar.setSize(sf::Vector2f(300.0f * hpPercent, this->playerHpBar.getSize().y));
+	std::cout << static_cast<float>(this->player->getMaxHealth()) << std::endl;
+}
+
+void Game::updateWorld()
+{
+
+}
+
+void Game::updateCollision()
+{
+	//Screen bounds collision
+	if (this->player->getBounds().left < 0.0f)
+		this->player->setPosition(sf::Vector2f(0.0f, this->player->getBounds().top));
+	if (this->player->getBounds().left + this->player->getBounds().width > this->window->getSize().x)
+		this->player->setPosition(sf::Vector2f(this->window->getSize().x - this->player->getBounds().width, this->player->getBounds().top));
+	if (this->player->getBounds().top < 0.0f)
+		this->player->setPosition(sf::Vector2f(this->player->getBounds().left, 0.0f));
+	if (this->player->getBounds().top + this->player->getBounds().height > this->window->getSize().y)
+		this->player->setPosition(sf::Vector2f(this->player->getBounds().left, this->window->getSize().y - this->player->getBounds().height));
 }
 
 void Game::updateBullets()
@@ -153,70 +217,87 @@ void Game::updateEnemies()
 
 	if (this->spawnTimer >= spawnTimerMax)
 	{
-		this->enemies.push_back(new Enemy(rand() % this->window->getSize().x - 20.0f, -100.0f));
+		this->enemies.push_back(new Enemy(sf::Vector2f(rand() % this->window->getSize().x - 20.0f, -100.0f), rand() % 7 + 3));
 		this->spawnTimer = 0.0f;
 	}
 
 	// For each enemy
 	for (int i = 0; i < this->enemies.size(); ++i)
 	{
-		bool enemy_removed = false;
 		this->enemies[i]->update();
 
-		// Removing enemy
-		if (!enemy_removed)
-		{
-			// If shot remove enemy and bullet
-			for (size_t k = 0; k < this->bullets.size() && !enemy_removed; k++)
-			{
-				if (this->bullets[k]->getBounds().intersects(this->enemies[i]->getBounds()))
-				{
-					this->bullets.erase(this->bullets.begin() + k);
-					this->enemies.erase(this->enemies.begin() + i);
-					enemy_removed = true;
-				}
-			}
+		bool enemy_removed = false;
 
-			// Enemy culling (bottom of screen)
-			if (this->enemies[i]->getBounds().top > this->window->getSize().y)
+		// For each bullet
+		for (size_t k = 0; k < this->bullets.size() && !enemy_removed; k++)
+		{
+			// Enemy Shot
+			if (this->bullets[k]->getBounds().intersects(this->enemies[i]->getBounds()))
 			{
+				this->points += this->enemies[i]->getPoints();
+				delete this->enemies[i];
 				this->enemies.erase(this->enemies.begin() + i);
-				std::cout << this->enemies.size() << "\n";
+				
+				delete this->bullets[k];
+				this->bullets.erase(this->bullets.begin() + k);
 				enemy_removed = true;
 			}
 		}
-	}
 
-	//Update each enemy
-	for (auto* enemy : this->enemies)
-	{
-		enemy->update();
+		// Player collide with enemy
+		if (!enemy_removed && this->enemies[i]->getBounds().intersects(this->player->getBounds()))
+		{
+			this->player->takeDamage(3);
+			this->enemies.erase(this->enemies.begin() + i);
+			enemy_removed = true;
+		}
+
+		// Enemy culling (bottom of screen)
+		if (!enemy_removed && this->enemies[i]->getBounds().top > this->window->getSize().y)
+		{
+			this->enemies.erase(this->enemies.begin() + i);
+			enemy_removed = true;
+		}
 	}
 }
 
 void Game::update()
 {
-	this->pollEvents();
-
 	this->updateInput();
 
 	this->player->update();
+
+	this->updateCollision();
 
 	this->updateBullets();
 
 	this->updateEnemies();
 
 	this->updateGUI();
+
+	this->updateWorld();
 }
 
 void Game::renderGUI()
 {
+	//Order decides layers
 	this->window->draw(this->pointText);
+
+	this->window->draw(this->playerHpBarBack);
+	this->window->draw(this->playerHpBar);
+}
+
+void Game::renderWorld()
+{
+	this->window->draw(this->backgroundSprite);
 }
 
 void Game::render()
 {
 	this->window->clear();
+
+	// Draw World
+	this->renderWorld();
 
 	// Draw stuff
 	this->player->render(*this->window);
@@ -235,6 +316,9 @@ void Game::render()
 
 	//GUI
 	this->renderGUI();
+
+	if (this->player->getHealth() <= 0)
+		this->window->draw(this->gameOverText);
 
 	// Display stuff
 	this->window->display();

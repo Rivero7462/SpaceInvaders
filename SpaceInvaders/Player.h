@@ -8,6 +8,8 @@ class Player
 {
 private:
 	//Variables
+	int hp;
+	int maxHp;
 	float movementSpeed;
 	int maxShootCooldown;
 	int shootCooldown;
@@ -26,7 +28,14 @@ public:
 
 	//Accessor
 	const sf::Vector2f& getPlayerCenter() const;
+	const sf::FloatRect& getBounds() const;
 	const bool& canShoot();
+	const int& getHealth() const;
+	const int& getMaxHealth() const;
+
+	//Modifiers
+	void setPosition(const sf::Vector2f pos);
+	void takeDamage(int damage);
 
 	//Functions
 	void move(const float dirX, const float dirY);
