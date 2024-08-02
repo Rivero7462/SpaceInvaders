@@ -1,28 +1,38 @@
 #include "Enemy.h"
+#include <iostream>
 
 //Private functions
-void Enemy::initVariables(int points)
+void Enemy::initVariables(int type)
 {
-	this->points = points;
-
-	this->type = 0;
-	this->hpMax = 10;
-	this->hp = hpMax;
+	this->type = type;
+	this->points = type;
 	this->moveSpeed = 3.0f;
 }
 
 void Enemy::initSprite()
 {
-	this->sprite.setRadius(static_cast<float>(rand() % 20 + 20));
-	this->sprite.setPointCount(this->points);
+	//Set Texture
+	std::string path = "Textures/Enemy_Ship_" + std::to_string(this->type) + ".png";
 
-	this->sprite.setFillColor(sf::Color(rand()%255+1, rand() % 255 + 1, rand() % 255 + 1, 255));
+	if (this->spriteTexture.loadFromFile(path))
+		this->sprite.setTexture(this->spriteTexture);
+	else
+		std::cout << "ERROR FAILED TO LOAD ENEMY TEXTURE" << std::endl;
+
+	this->sprite.rotate(180.0f);
 }
 //Constructors / Destructors
 
-Enemy::Enemy(sf::Vector2f pos, int points)
+Enemy::Enemy()
 {
-	this->initVariables(points);
+	this->type = 0;
+	this->points = 0;
+	this->moveSpeed = 0;
+}
+
+Enemy::Enemy(sf::Vector2f pos, int type)
+{
+	this->initVariables(type);
 	this->initSprite();
 
 	this->sprite.setPosition(pos);
@@ -40,6 +50,17 @@ const sf::FloatRect Enemy::getBounds() const
 const int& Enemy::getPoints() const
 {
 	return this->points;
+}
+const sf::Sprite Enemy::getSprite() const
+{
+	return this->sprite;
+}
+const sf::Vector2f& Enemy::getCenter() const
+{
+	float centerX = this->sprite.getPosition().x + (this->sprite.getGlobalBounds().width / 2);
+	float centerY = this->sprite.getPosition().y + (this->sprite.getGlobalBounds().height / 2);
+
+	return sf::Vector2f(centerX, centerY);
 }
 //Functions
 

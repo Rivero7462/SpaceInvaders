@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\EnemyShoot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\EnemyShoot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,8 +19,24 @@
       "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|solutionrelative:SpaceInvaders\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A548B42D-9754-455B-928E-493D27DF9DDE}|SpaceInvaders\\SpaceInvaders.vcxproj|R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,64 +58,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Game.h",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\Game.h",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.h",
               "RelativeToolTip": "SpaceInvaders\\Game.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAWAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAADMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T17:17:25.213Z"
+              "WhenOpened": "2024-07-29T17:17:25.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Game.cpp",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\Game.cpp",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Game.cpp",
               "RelativeToolTip": "SpaceInvaders\\Game.cpp",
-              "ViewState": "AQIAAJAAAAAAAAAAAAAAAK0AAAAAAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-29T17:17:41.401Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Player.h",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\Player.h",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.h",
               "RelativeToolTip": "SpaceInvaders\\Player.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T17:28:11.015Z"
+              "WhenOpened": "2024-07-29T17:28:11.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Player.cpp",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\Player.cpp",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Player.cpp",
               "RelativeToolTip": "SpaceInvaders\\Player.cpp",
-              "ViewState": "AQIAABAAAAAAAAAAAAAowEYAAAALAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAowCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T17:28:26.547Z"
+              "WhenOpened": "2024-07-29T17:28:26.547Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Bullet.h",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Bullet.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\Bullet.h",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Bullet.h",
               "RelativeToolTip": "SpaceInvaders\\Bullet.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T19:19:49.296Z"
+              "WhenOpened": "2024-07-29T19:19:49.296Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -117,13 +129,14 @@
               "RelativeDocumentMoniker": "SpaceInvaders\\Bullet.cpp",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Bullet.cpp",
               "RelativeToolTip": "SpaceInvaders\\Bullet.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAowBkAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T19:20:08.45Z"
+              "WhenOpened": "2024-07-29T19:20:08.45Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Enemy.h",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Enemy.h",
               "RelativeDocumentMoniker": "SpaceInvaders\\Enemy.h",
@@ -131,19 +144,47 @@
               "RelativeToolTip": "SpaceInvaders\\Enemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-29T21:41:43.516Z"
+              "WhenOpened": "2024-07-29T21:41:43.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Enemy.cpp",
               "RelativeDocumentMoniker": "SpaceInvaders\\Enemy.cpp",
               "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\Enemy.cpp",
               "RelativeToolTip": "SpaceInvaders\\Enemy.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-29T21:42:04.798Z"
+              "WhenOpened": "2024-07-29T21:42:04.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnemyShoot.h",
+              "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.h",
+              "RelativeDocumentMoniker": "SpaceInvaders\\EnemyShoot.h",
+              "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.h",
+              "RelativeToolTip": "SpaceInvaders\\EnemyShoot.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-02T16:07:31.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyShoot.cpp",
+              "DocumentMoniker": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.cpp",
+              "RelativeDocumentMoniker": "SpaceInvaders\\EnemyShoot.cpp",
+              "ToolTip": "R:\\1 Game Design\\C\u002B\u002B\\SpaceInvaders\\SpaceInvaders\\EnemyShoot.cpp",
+              "RelativeToolTip": "SpaceInvaders\\EnemyShoot.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADEAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-02T16:07:35.93Z",
+              "EditorCaption": ""
             }
           ]
         }

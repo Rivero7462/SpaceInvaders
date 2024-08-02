@@ -1,5 +1,11 @@
 #include "Game.h"
 
+void Game::initVariables()
+{
+	scrollSpeed = 2.0f;
+	backgroundY = 0.0f;
+}
+
 void Game::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(1920, 1080), "Space Invaders", sf::Style::Fullscreen);
@@ -11,6 +17,16 @@ void Game::initTextures()
 {
 	this->textures["BULLET"] = new sf::Texture();
 	this->textures["BULLET"]->loadFromFile("Textures/Player_Bullet.png");
+}
+
+void Game::initWorld()
+{
+	if (this->backgroundTex.loadFromFile("Textures/background.png"))
+		this->backgroundSprite.setTexture(this->backgroundTex);
+	else
+		std::cout << "ERROR LOADING BACKGROUND\n";
+
+	this->backgroundTex.setRepeated(true);
 }
 
 void Game::initGUI()
@@ -43,14 +59,6 @@ void Game::initGUI()
 	this->playerHpBarBack.setFillColor(sf::Color(25, 25, 25, 200));
 }
 
-void Game::initBackground()
-{
-	if (this->backgroundTex.loadFromFile("Textures/background.png"))
-		this->backgroundSprite.setTexture(this->backgroundTex);
-	else
-		std::cout << "ERROR LOADING BACKGROUND\n";
-}
-
 void Game::initSystems()
 {
 	this->points = 0;
@@ -59,6 +67,7 @@ void Game::initSystems()
 void Game::initPlayer()
 {
 	this->player = new Player();
+	this->player->setPosition(sf::Vector2f(this->window->getSize().x / 2.0f - this->player->getBounds().width / 2.0f, this->window->getSize().y - 100.0f));
 }
 
 void Game::initEnemies()
@@ -70,10 +79,11 @@ void Game::initEnemies()
 //Constructor /Destructor
 Game::Game()
 {
+	this->initVariables();
 	this->initWindow();
 	this->initTextures();
+	this->initWorld();
 	this->initGUI();
-	this->initBackground();
 	this->initSystems();
 
 	this->initPlayer();
@@ -148,10 +158,11 @@ void Game::updateInput()
 		this->bullets.push_back(
 			new Bullet(
 				this->textures["BULLET"],
-				player->getPlayerCenter(),
+				this->player->getPlayerCenter(),
 				sf::Vector2f(0.1f, 0.1f),
 				-1.0f,
-				30.0f
+				30.0f,
+				0
 			));
 	}
 }
@@ -166,12 +177,14 @@ void Game::updateGUI()
 	//Update Player GUI
 	float hpPercent = static_cast<float>(this->player->getHealth()) / this->player->getMaxHealth();
 	this->playerHpBar.setSize(sf::Vector2f(300.0f * hpPercent, this->playerHpBar.getSize().y));
-	std::cout << static_cast<float>(this->player->getMaxHealth()) << std::endl;
 }
 
 void Game::updateWorld()
 {
+	backgroundY += scrollSpeed;
 
+	if (backgroundY >= this->backgroundTex.getSize().y)
+		backgroundY = 0.0f;
 }
 
 void Game::updateCollision()
@@ -202,8 +215,6 @@ void Game::updateBullets()
 			delete this->bullets.at(counter);
 			this->bullets.erase(this->bullets.begin() + counter);
 			--counter;
-
-			std::cout << this->bullets.size() << "\n";
 		}
 
 		++counter;
@@ -217,7 +228,8 @@ void Game::updateEnemies()
 
 	if (this->spawnTimer >= spawnTimerMax)
 	{
-		this->enemies.push_back(new Enemy(sf::Vector2f(rand() % this->window->getSize().x - 20.0f, -100.0f), rand() % 7 + 3));
+		int screenSpace = static_cast<int>(this->window->getSize().x - 50.0f);
+		this->enemies.push_back(new Enemy(sf::Vector2f(rand() % screenSpace + 50.0f, -100.0f), rand() % 3));
 		this->spawnTimer = 0.0f;
 	}
 
@@ -289,6 +301,10 @@ void Game::renderGUI()
 
 void Game::renderWorld()
 {
+	// Draw the background twice to create the looping effect
+	this->backgroundSprite.setPosition(0, backgroundY);
+	this->window->draw(this->backgroundSprite);
+	this->backgroundSprite.setPosition(0, backgroundY - this->backgroundTex.getSize().y);
 	this->window->draw(this->backgroundSprite);
 }
 
@@ -306,7 +322,7 @@ void Game::render()
 	for (auto *bullet : this->bullets)
 	{
 		bullet->render(this->window);
-	} 
+	}
 
 	//Enemies
 	for (auto* enemy : this->enemies)

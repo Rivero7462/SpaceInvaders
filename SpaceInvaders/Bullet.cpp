@@ -4,9 +4,10 @@
 Bullet::Bullet()
 {
 	this->movementSpeed = 0;
+	this->type = 0;
 }
 
-Bullet::Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float dirY, float movementSpeed)
+Bullet::Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float dirY, float movementSpeed, int type)
 {
 	//Set texture to sprite
 	this->sprite.setTexture(*texture);
@@ -15,6 +16,7 @@ Bullet::Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float 
 	
 	this->direction.y = dirY;
 	this->movementSpeed = movementSpeed;
+	this->type = type;
 }
 
 Bullet::~Bullet()

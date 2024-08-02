@@ -28,6 +28,8 @@ private:
 	//World
 	sf::Texture backgroundTex;
 	sf::Sprite backgroundSprite;
+	float scrollSpeed;
+	float backgroundY;
 
 	//Systems
 	unsigned int points;
@@ -45,10 +47,11 @@ private:
 	std::vector<Enemy*> enemies;
 
 	//Private functions
+	void initVariables();
 	void initWindow();
 	void initTextures();
+	void initWorld();
 	void initGUI();
-	void initBackground();
 	void initSystems();
 
 	void initPlayer();

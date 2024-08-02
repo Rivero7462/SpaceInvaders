@@ -8,6 +8,7 @@ class Bullet
 {
 	sf::Vector2f direction;
 	float movementSpeed;
+	int type;
 
 	sf::Sprite sprite;
 
@@ -17,7 +18,7 @@ private:
 
 public:
 	Bullet();
-	Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float dirY, float movementSpeed);
+	Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float dirY, float movementSpeed, int type);
 	virtual ~Bullet();
 
 	//Accessor

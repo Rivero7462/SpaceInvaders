@@ -1,2 +1,7 @@
-﻿  Game.cpp
+﻿  Enemy.cpp
+  EnemyShoot.cpp
+  Game.cpp
+  main.cpp
+  Generating Code...
+R:\1 Game Design\C++\SpaceInvaders\SpaceInvaders\Enemy.cpp(63,1): warning C4172: returning address of local variable or temporary
   SpaceInvaders.vcxproj -> R:\1 Game Design\C++\SpaceInvaders\x64\Debug\SpaceInvaders.exe

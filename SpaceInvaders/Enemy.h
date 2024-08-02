@@ -6,10 +6,11 @@
 class Enemy
 {
 private:
-	sf::CircleShape sprite;
+	sf::Sprite sprite;
+	sf::Texture spriteTexture;
+	std::vector<std::string> enemyTextures;
+
 	int type;
-	int hp;
-	int hpMax;
 	int points;
 	float moveSpeed;
 
@@ -17,12 +18,15 @@ private:
 	void initVariables(int points);
 
 public:
-	Enemy(sf::Vector2f pos, int points);
+	Enemy();
+	Enemy(sf::Vector2f pos, int type);
 	virtual ~Enemy();
 
 	//Accessors
 	const sf::FloatRect getBounds() const;	//Make sure copy not reference or it'll "bug out"
 	const int& getPoints() const;
+	const sf::Sprite getSprite() const;
+	const sf::Vector2f& getCenter() const;
 
 	//Functions
 
