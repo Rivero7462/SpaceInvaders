@@ -228,8 +228,23 @@ void Game::updateEnemies()
 
 	if (this->spawnTimer >= spawnTimerMax)
 	{
+		int enemyType = rand() % 3;
 		int screenSpace = static_cast<int>(this->window->getSize().x - 50.0f);
-		this->enemies.push_back(new Enemy(sf::Vector2f(rand() % screenSpace + 50.0f, -100.0f), rand() % 3));
+		sf::Vector2f position(rand() % screenSpace + 50.0f, -100.0f);
+
+		switch (enemyType)
+		{
+		case 0:
+			//this->enemies.push_back(new Enemy(position, 1, 3.0f));
+			this->enemies.push_back(new EnemyShoot(&bullets, position, 1, 3.0f));
+			break;
+		case 1:
+			this->enemies.push_back(new EnemyShoot(&bullets, position, 1, 3.0f));
+			break;
+		case 2:
+			this->enemies.push_back(new EnemyShoot(&bullets, position, 1, 3.0f));
+			break;
+		}
 		this->spawnTimer = 0.0f;
 	}
 

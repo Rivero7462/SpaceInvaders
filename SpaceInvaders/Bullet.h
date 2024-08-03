@@ -6,15 +6,12 @@
 
 class Bullet
 {
+private:
 	sf::Vector2f direction;
 	float movementSpeed;
 	int type;
 
 	sf::Sprite sprite;
-
-	//Private Functions
-
-private:
 
 public:
 	Bullet();

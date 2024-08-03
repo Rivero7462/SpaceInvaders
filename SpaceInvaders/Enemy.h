@@ -6,20 +6,21 @@
 class Enemy
 {
 private:
+
+protected:
 	sf::Sprite sprite;
 	sf::Texture spriteTexture;
 	std::vector<std::string> enemyTextures;
 
+	float moveSpeed;
 	int type;
 	int points;
-	float moveSpeed;
 
 	void initSprite();
-	void initVariables(int points);
+	void initVariables(int points, float moveSpeed);
 
 public:
 	Enemy();
-	Enemy(sf::Vector2f pos, int type);
 	virtual ~Enemy();
 
 	//Accessors
@@ -28,9 +29,12 @@ public:
 	const sf::Sprite getSprite() const;
 	const sf::Vector2f& getCenter() const;
 
-	//Functions
+	//Modifiers
+	void setPosition(const sf::Vector2f pos);
+	void move(const float direction, const float moveSpeed);
 
-	void update();
+	//Functions
+	virtual void update();	// Virtual means it can get overridden
 	void render(sf::RenderTarget* target);
 };
 

@@ -2,11 +2,10 @@
 #include <iostream>
 
 //Private functions
-void Enemy::initVariables(int type)
+void Enemy::initVariables(int points, float moveSpeed)
 {
-	this->type = type;
-	this->points = type;
-	this->moveSpeed = 3.0f;
+	this->points = points;
+	this->moveSpeed = moveSpeed;
 }
 
 void Enemy::initSprite()
@@ -30,14 +29,6 @@ Enemy::Enemy()
 	this->moveSpeed = 0;
 }
 
-Enemy::Enemy(sf::Vector2f pos, int type)
-{
-	this->initVariables(type);
-	this->initSprite();
-
-	this->sprite.setPosition(pos);
-}
-
 Enemy::~Enemy()
 {
 }
@@ -47,14 +38,17 @@ const sf::FloatRect Enemy::getBounds() const
 {
 	return this->sprite.getGlobalBounds();
 }
+
 const int& Enemy::getPoints() const
 {
 	return this->points;
 }
+
 const sf::Sprite Enemy::getSprite() const
 {
 	return this->sprite;
 }
+
 const sf::Vector2f& Enemy::getCenter() const
 {
 	float centerX = this->sprite.getPosition().x + (this->sprite.getGlobalBounds().width / 2);
@@ -62,14 +56,27 @@ const sf::Vector2f& Enemy::getCenter() const
 
 	return sf::Vector2f(centerX, centerY);
 }
+//Modifiers
+
+void Enemy::setPosition(const sf::Vector2f pos)
+{
+	this->sprite.setPosition(pos);
+}
+
+void Enemy::move(const float direction, const float moveSpeed)
+{
+	this->sprite.move(direction, moveSpeed);
+}
+
 //Functions
 
 void Enemy::update()
 {
-	this->sprite.move(0.0f, this->moveSpeed);
+
 }
 
 void Enemy::render(sf::RenderTarget* target)
 {
+	//std::cout << "RENDERING\n";
 	target->draw(this->sprite);
 }

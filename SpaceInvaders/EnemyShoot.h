@@ -10,20 +10,19 @@ class EnemyShoot : public Enemy
 {
 private:
 	int shootCooldown = 10;
-	std::vector<Bullet*> bullets;
+	std::vector<Bullet*>* bullets;
 	sf::Texture bulletTexture;
 
 	//Functions
-	void initVariables();
+	void initVariables(std::vector<Bullet*>* bullets);
 	void initBullet();
 
 public:
-	EnemyShoot();
+	EnemyShoot(std::vector<Bullet*> *bullets, sf::Vector2f position, int points, float moveSpeed);
 	virtual ~EnemyShoot();
 
 	//Functions
 
 	void update();
-	void render(sf::RenderTarget* target);
 };
 

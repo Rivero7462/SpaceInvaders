@@ -21,7 +21,6 @@ Bullet::Bullet(sf::Texture* texture, sf::Vector2f pos, sf::Vector2f size, float 
 
 Bullet::~Bullet()
 {
-
 }
 //Functions
 
@@ -34,6 +33,7 @@ void Bullet::update()
 {
 	//Movement
 	this->sprite.move(this->movementSpeed * this->direction);
+
 }
 
 void Bullet::render(sf::RenderTarget* target)

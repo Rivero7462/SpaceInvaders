@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "EnemyShoot.h"
 
 class Game
 {
@@ -22,7 +23,6 @@ private:
 	//GUI
 	sf::Font font;
 	sf::Text pointText;
-
 	sf::Text gameOverText;
 
 	//World

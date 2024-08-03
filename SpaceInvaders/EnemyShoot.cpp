@@ -1,9 +1,11 @@
 #include "EnemyShoot.h"
 
-void EnemyShoot::initVariables()
+void EnemyShoot::initVariables(std::vector<Bullet*>* bullets)
 {
-	this->shootCooldown = 10;
+	this->shootCooldown = 20;
+	this->bullets = bullets;
 }
+
 void EnemyShoot::initBullet()
 {
 	if(!this->bulletTexture.loadFromFile("Textures/Enemy_Bullet.png"))
@@ -11,41 +13,41 @@ void EnemyShoot::initBullet()
 }
 //Constructors / Destructors
 
-EnemyShoot::EnemyShoot()
+EnemyShoot::EnemyShoot(std::vector<Bullet*>* bullets, sf::Vector2f position, int points, float moveSpeed)
 {
-	initVariables();
+	this->Enemy::initVariables(points, moveSpeed);
+	initVariables(bullets);
+	initBullet();
+	this->initSprite();
+
+	this->setPosition(position);
 }
 
 EnemyShoot::~EnemyShoot()
 {
-	//Bullets
-	for (auto* i : this->bullets)
-		delete i;
 }
 //Functions
 
 void EnemyShoot::update()
 {
+	this->Enemy::update();
+
+	this->move(0.0f, this->moveSpeed);
+
 	this->shootCooldown--;
 
 	if (this->shootCooldown <= 0)
 	{
-		std::cout << "Shoot\n";
+		this->bullets->push_back(new Bullet(
+			&bulletTexture,
+			this->getCenter(),
+			sf::Vector2f(1.0f, 1.0f),
+			1.0f,
+			10.0f,
+			1
+		));
 
-		this->bullets.push_back(
-			new Bullet(
-				&bulletTexture,
-				this->getCenter(),
-				sf::Vector2f(0.1f, 0.1f),
-				1.0f,
-				10.0f,
-				1
-			));
-		this->shootCooldown = 10;
+		this->shootCooldown = 20;
 	}
 }
 
-void EnemyShoot::render(sf::RenderTarget* target)
-{
-	//target->draw()
-}

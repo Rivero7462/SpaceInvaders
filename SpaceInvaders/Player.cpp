@@ -45,6 +45,7 @@ const sf::Vector2f& Player::getPlayerCenter() const
 
 	return sf::Vector2f(centerX, centerY);
 }
+
 const sf::FloatRect& Player::getBounds() const
 {
 	return this->sprite.getGlobalBounds();
